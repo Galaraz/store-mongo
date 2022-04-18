@@ -60,4 +60,11 @@ func main() {
 	}
 
 	db := client.Database("tronics")
+	collection := db.Collection("products")
+	res,err := collection.Insert(context.Background(), iphone10)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(res.InsertdID,(primitive,ObjectID),Timestamp())
 }
